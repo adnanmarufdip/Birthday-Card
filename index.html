@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="img/kettyHeart.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="css/cake.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="js/script.js"></script>
+    <title>Happy Birthday *****!!</title>
+</head>
+<body onload="PlaySequence()" id="Bbody">
+  
+  <audio id="audioID" loop> <source src="media/HappyBirthday.mp3"  type="audio/mp3"></audio>
+
+  <div class="LoadingScreen" id="LoadingScreen">
+    <span style="--i:1;">L</span>
+    <span style="--i:2;">o</span>
+    <span style="--i:3;">a</span>
+    <span style="--i:4;">d</span>
+    <span style="--i:5;">i</span>
+    <span style="--i:6;">n</span>	
+    <span style="--i:7;">g</span>
+    <span style="--i:8;">.</span>
+    <span style="--i:9;">.</span>
+    <span style="--i:10;">.</span>
+  </div>
+  <div id="uselessBtn" onclick="StartPlay()">
+    <span>Tap me for no reason!</span>
+  </div>
+  <div class="EntryMsg" id="EntryMsg">
+    <div class="MsgBox" id="MsgBox">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <img src="img/ribbon1.png" alt="">
+    </div>
+    <div class="aniMsg" id="aniMsg">
+      <p id="MsgWrite"></p>
+    </div>
+  </div>
+  <div class="TheEvent" id="TheEvent">
+    <div class="spakrlingStar" id="spakrlingStar">
+      <canvas id="canvas"></canvas>
+      <img src="img/moon.png" alt="" id="moon">
+      <img src="img/hills.png" alt="" id="hills">
+      <img src="img/entry.png" alt="" id="entry">
+      <img src="img/normal.png" alt="" id="normal">
+      <div class="SpeechBubble" id="SpeechBubble">
+        <p id="BubbleText">.......</p>
+      </div>
+    </div>
+  </div>
+  <div class="moodMeter_container" id="moodMeter_container">
+    <img src="img/mood-normal.png" alt="" id="moodImg">
+    <div class="moodMeter">
+      <progress id="moodBar" value="0" max="100"></progress>
+      <p>Status: <span id="moodStatus">Celebrating</span></p>
+    </div>
+  </div>
+  <div class="MoodScore" id="MoodScore">
+    <p>Party level: <span id="MScore"></span></p>
+  </div>
+  <div class="giftContainer" id="giftContainer">
+    <img src="" alt="" id="giftType">
+  </div>
+  <div class="DroneCon" id="DroneCon">
+    <img src="img/dronePic.png" alt="" id="dronePic">
+    <img src="img/giftPic.png" alt="" id="giftPic">
+  </div>
+  <div class="ReplyBtns" id="ReplyBtns">
+    <button type="button" id="BtnPos" onclick="FunctionPos()" class="BtnStyle"></button>
+    <button type="button" id="BtnNeg" onclick="FunctionNeg()" class="BtnStyle"></button>
+  </div>
+  <div class="cake-body" id="CakeBody">
+		<p class="kettyname">
+			<span class="p1">H.B.D</span>
+			<span class="p2">&#10084;*****&#10084;</span>
+		</p>
+    <div class="layer f1">
+        <div class="spot-group sg1">
+            <div class="spot s1"></div>
+            <div class="spot s2"></div>
+            <div class="spot s3"></div>
+        </div>
+        <div class="spot-group sg2">
+            <div class="spot s1"></div>
+            <div class="spot s2"></div>
+        </div>
+    </div>
+    <div class="layer f2">
+        <div class="spot-group sg3">
+            <div class="spot s1"></div>
+            <div class="spot s2"></div>
+        </div>
+        <div class="spot-group sg4">
+            <div class="spot s1"></div>
+            <div class="spot s2"></div>
+            <div class="spot s3"></div>
+        </div>
+    </div>
+    <div class="layer f3">
+        <div class="spot-group sg5">
+            <div class="spot s1"></div>
+            <div class="spot s2"></div>
+            <div class="spot s3"></div>
+        </div>
+    </div>
+    <div class="layer f4">
+      <div class="drip-ctn">
+        <div class="drip d1"></div>
+        <div class="drip d2"></div>
+        <div class="drip d3"></div>
+        <div class="drip d4"></div>
+        <div class="drip d5"></div>
+        <div class="drip d6"></div>
+        <div class="drip d7"></div>
+        <div class="drip d8"></div>
+        <div class="drip d9"></div>
+      </div>
+    </div>
+    <div class="candle-ctn">
+        <div class="candle c1">
+          <div class="c-base"></div>
+          <div class="wick"></div>
+          <div class="flame" id="flame"></div>
+          <div class="highlight" id="flameShadow"></div>
+        </div>
+    </div>
+</div>
+<div class="sky-container" id="shooringStar">
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+</div>
+<div class="blowCandle" id="blowCandle">
+  <progress id="blowBar" value="0" max="400"></progress>
+  <button type="button" id="BlowBtn" class="BtnStyle" onmousedown="blowInc()" onmouseup="blowDec()" ontouchstart="blowInc()" ontouchend="blowDec()">Blow it!</button>
+</div>
+<div class="border">
+  <canvas id="canvasF"></canvas>
+</div>
+<div class="skyText" id="skyText">
+  <span class="skyGreet">Happy Birthday</span>
+  <span class="skyName">******</span>
+</div>
+<div class="reloadPage" id="reloadPage">
+  <a href="index.html">Click to watch again!</a>
+</div>
+<!-- Additional JavaScript files -->
+  <script type="text/javascript" src="js/particles.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
+  <script type="text/javascript" src="js/twinklingstar.js"></script>
+  <script type="text/javascript" src="js/firework.js"></script>
+</body>
+</html>
